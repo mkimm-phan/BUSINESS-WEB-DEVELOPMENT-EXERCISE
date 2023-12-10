@@ -1,0 +1,38 @@
+<h3 class="text-center text-white bg-dark p-2" >Fashion</h3>
+
+<div class=" p-2">
+  <button class="btn btn-primary" (click)="createFashion()">Create New</button>
+</div>
+
+{{errMessage}}
+
+<div class=" w-100">
+  <table class="table table-hover" border="1">
+    <tr class="bg-dark text-white text-center">
+      <td>Id</td>
+      <td>Fashion style</td>
+      <td>Fashion Subject</td>
+      <td>Fashion Detail</td>
+      <td>Image</td>
+      <td>Date Added</td>
+      <td>Action</td>
+    </tr>
+    <tbody>
+      <tr *ngFor="let fashion of fashions">
+        <td>{{fashion._id}}</td>
+        <td>{{fashion.style}}</td>
+        <td>{{fashion.fashion_subject}}</td>
+        <td>{{fashion.fashion_detail}} </td>
+        <td>
+          <img src="{{fashion.fashion_image}}" width="150px" height="150px">
+        </td>
+        <td class="col-1 text-center">{{fashion.date_added |  date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+          <button class="btn btn-primary w-100 m-1" (click)="detailFashion(fashion._id)">Detail</button>
+          <button class="btn btn-secondary w-100 m-1" (click)="updateFashion(fashion._id)">Edit</button>
+          <button class="btn btn-danger w-100 m-1" (click)="deleteFashion(fashion._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
