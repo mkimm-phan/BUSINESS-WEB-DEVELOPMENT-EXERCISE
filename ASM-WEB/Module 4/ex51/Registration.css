@@ -1,0 +1,16 @@
+
+body {
+    background-color: rgb(21, 115, 118);
+    color: white;
+  }
+  
+  div {
+    margin: 0.9vh;
+  }
+  
+  h1 {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  

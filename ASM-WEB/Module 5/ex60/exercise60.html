@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/ASM-WEB/Module 5/Style.css">
+    <style>
+        a{
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-bar">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">HTML</a></li>
+            <li id="main-bar">
+                <a href="#">CSS</a>
+                    <ul id="sub" class="sub-bar">
+                        <li><a href="#">CSS CĂN BẢN</a></li>
+                        <li><a href="#">GIAO DIỆN VỚI CSS</a></li>
+                        <li><a href="#">CSS NÂNG CAO</a></li>
+                    </ul>
+            </li>
+          <li id="main-bar">
+            <a href="#">JAVASCRIPT</a>
+                <ul id="sub" class="sub-bar">
+                    <li><a href="#">LESSON 1</a></li>
+                    <li><a href="#">LESSON 2</a></li>
+                    <li><a href="#">LESSON 3</a></li>
+                </ul>
+          </li>
+          <li><a href="#">HTML DOM</a></li>
+        </ul>
+      </div>
+
+    <script>
+        var element = document.getElementById("main-bar");
+        const sub = document.getElementById("sub");
+        element.onmouseover = function () {
+          sub.classList.remove("sub-bar");
+        };
+        element.onmouseout = function () {
+          sub.classList.add("sub-bar");
+        };
+      </script>
+    
+</body>
+</html>

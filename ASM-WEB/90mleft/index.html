@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Object & Json Array</title>
+    <link rel="shortcut icon" href="/ASM-WEB/Module 2/ex23/images/MAA2" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var xmlDoc = this.responseXML;
+                var student = xmlDoc.getElementsByTagName("student")[0];
+
+                document.getElementById("mssv").innerHTML = student.getElementsByTagName("mssv")[0].textContent;
+                document.getElementById("name").innerHTML = student.getElementsByTagName("name")[0].textContent;
+                document.getElementById("email").innerHTML = student.getElementsByTagName("email")[0].textContent;
+                document.getElementById("phone").innerHTML = student.getElementsByTagName("phone")[0].textContent;
+                document.getElementById("hobby").innerHTML = student.getElementsByTagName("hobby")[0].textContent;
+                document.getElementById("gender").innerHTML = student.getElementsByTagName("gender")[0].textContent;
+                document.getElementById("hometown").innerHTML = student.getElementsByTagName("hometown")[0].textContent;
+                document.getElementById("nickname").innerHTML = student.getElementsByTagName("nickname")[0].textContent;
+            }
+        };
+        xhttp.open("GET", "student.xml", true);
+        xhttp.send();
+    </script>
+</head>
+<body>
+    <section class="header"></section>
+
+    <section class="content">
+        <table border="1" style="border-collapse: collapse;">
+            <td class="ava-section">
+                <container class="avata-container"></container>
+            </td>
+            <td class="content-section">
+                <label for="ID">MSSV</label>
+                <td id="mssv"></td>
+                <tr>
+                    <th>Họ tên</th>
+                    <td id="name"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td id="email"></td>
+                </tr>
+                <tr>
+                    <th>Số điện thoại</th>
+                    <td id="phone"></td>
+                </tr>
+                <tr>
+                    <th>Sở thích</th>
+                    <td id="hobby"></td>
+                </tr>
+                <tr>
+                    <th>Giới tính</th>
+                    <td id="gender"></td>
+                </tr>
+                <tr>
+                    <th>Quê quán</th>
+                    <td id="hometown"></td>
+                </tr>
+                <tr>
+                    <th>Nickname</th>
+                    <td id="nickname"></td>
+                </tr>
+            </td>
+        </table>
+    </section>
+    
+    <section class="footer"></section>
+    
+    <script>
+        $(function () {
+            $(".header").load("header.html");
+            $(".footer").load("footer.html");
+            $(".avata-container").load("marquee-avata.html");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<p><b>79. binding-property-component works!</b></p>
+
+<!-- binding-property.component.html -->
+
+<!-- Binding with [] -->
+<p>Name: [{{name}}]</p> 
+
+<!-- Binding with {} -->
+<p>Email: {{email}}</p>
+
+<input [id]="nameid" [value]="name">
+
+<input [id]="emailid" [value]="email" [disabled]="isDisabled">

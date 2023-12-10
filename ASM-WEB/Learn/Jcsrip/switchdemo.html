@@ -1,0 +1,38 @@
+<html>
+    <head></head>
+    <body>
+        <div id="mydiv" style="background-color: red; width:100px; height: 100px;"></div>
+        
+        <script>
+            function changecolor(value){
+                // alert(value)
+                value=parseInt(value)
+                mydiv = document.getElementById("mydiv")
+                switch(value)
+                {
+                    case 0:
+                        mydiv.style.backgroundColor = "yellow";
+                        break;
+                    case 1:
+                        mydiv.style="background-color: green; width:100px; height: 100px;"
+                        break;
+                    case 2:
+                        mydiv.style="background-color: black; width:100px; height: 100px;"
+                        break;
+                    default: 
+                        break;
+                }
+            }
+        </script> 
+        <p>
+            <input type="radio" name="color" id="yellow" value="0" onchange="changecolor(this.value)">
+            <label for="yellow"> Yellow</label>
+
+            <input type="radio" name="color" id="green" value="1" onchange="changecolor(this.value)">
+            <label for="green"> Green </label>
+
+            <input type="radio" name="color" id="black" value="2" onchange="changecolor(this.value)">
+            <label for="black"> Black </label>
+        </p>
+    </body>
+</html>

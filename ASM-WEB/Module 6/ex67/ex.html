@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIST OF STUDENT</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <table id="sinhviens" border="1">
+            <thead>
+                <tr>
+                    <th colspan="4" style="text-align:center; background-color:yellow">LIST OF STUDENT</th>
+                </tr>
+                <tr style="background-color: green; color: white;">
+                    <th onclick="sortTable(0)">Student ID</th>
+                    <th onclick="sortTable(1)">Student Name</th>
+                    <th onclick="sortTable(2)">Birthday</th>
+                    <th onclick="sortTable(3)">Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="sinhvienchitiet" style="visibility: hidden;">
+            <!-- ... (student detail table) ... -->
+            <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center; background-color:rgb(230, 193, 10)">Sudent Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let xmlContent = '';
+        let tableSinhviens = document.getElementById('sinhviens');
+        const keyText = {
+            id: 'Student ID',
+            name: 'Student Name',
+            birthday: 'Birthday',
+            gender: 'Gender'
+        }
+
+        const onClick = (sv) => {
+            let trSv = document.getElementById('sinhvienchitiet')
+            trSv.style.visibility = 'visible'
+            tableSinhviens.style.visibility = 'collapse'
+
+            Object.keys(sv).forEach(k => {
+                let row = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = keyText[k];
+                row.appendChild(td);
+
+                td = document.createElement('td');
+                td.innerText = sv[k];
+                row.appendChild(td);
+
+                // Add mouseover and mouseout event listeners
+                row.addEventListener("mouseover", function () {
+                    this.style.backgroundColor = "yellow";
+                });
+
+                row.addEventListener("mouseout", function () {
+                    this.style.backgroundColor = "";
+                });
+
+                trSv.children[1].appendChild(row);
+            })
+
+            
+        }
+
+        fetch('student.xml')
+            .then(response => response.text())
+            .then(xml => {
+                xmlContent = xml;
+                let parser = new DOMParser();
+                let xmlDOM = parser.parseFromString(xmlContent, 'text/xml');
+                let students = xmlDOM.querySelectorAll('student');
+
+                students.forEach(student => {
+                    let row = document.createElement('tr');
+                    row.id = 'rowItem';
+                    row.onclick = () => onClick({
+                        id: student.querySelector('id').textContent,
+                        name: student.querySelector('name').textContent,
+                        birthday: student.querySelector('birthday').textContent,
+                        gender: student.querySelector('gender').textContent
+                    });
+
+                    let td = document.createElement('td');
+                    td.innerText = student.querySelector('id').textContent;
+                    row.appendChild(td);
+
+                    td = document.createElement('td');
+                    td.innerText = student.querySelector('name').textContent;
+                    row.appendChild(td);
+
+                    td = document.createElement('td');
+                    td.innerText = student.querySelector('birthday').textContent;
+                    row.appendChild(td);
+
+                    td = document.createElement('td');
+                    td.innerText = student.querySelector('gender').textContent;
+                    row.appendChild(td);
+
+                    tableSinhviens.querySelector('tbody').appendChild(row);
+                    // Add mouseover and mouseout event listeners
+                    row.addEventListener("mouseover", function () {
+                        this.style.backgroundColor = "yellow";
+                    });
+
+                    row.addEventListener("mouseout", function () {
+                        this.style.backgroundColor = "";
+                    });
+                });
+            });
+
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("sinhviens");
+            switching = true;
+            dir = "asc";
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 2; i < (rows.length - 2); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

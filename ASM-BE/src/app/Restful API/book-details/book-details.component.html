@@ -1,0 +1,31 @@
+<p>{{errMessage}}</p>
+<table border="1">
+    <tr align="center">
+        <th>Tensach</th>
+        <th>Giaban</th>
+        <th>Mota</th>
+        <th>Anhbia</th>
+        <th>Ngaycapnhat</th>
+        <th>Soluongton</th>
+        <th>MaCD</th>
+        <th>MaNXB</th>
+    </tr>
+    <tr>
+        <td>{{curriculum.Tensach}}</td>
+        <td>{{curriculum.Giaban}}</td>
+        <td>{{curriculum.Mota}}</td>
+        <td><img src="assets/curriculum_images/{{curriculum.Anhbia}}" width="100px"height="150px">
+        </td>
+        <td>{{curriculum.Ngaycapnhat}}</td>
+        <td>{{curriculum.Soluongton}}</td>
+        <td>{{curriculum.MaCD}}</td>
+        <td>{{curriculum.MaNXB}}</td>
+    </tr>
+    <tr align="right">
+        <td colspan="8">
+          <button (click)="closeDetails()">Close</button>
+        </td>
+    </tr>
+</table>
+
+  

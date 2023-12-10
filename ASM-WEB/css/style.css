@@ -1,0 +1,59 @@
+#header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  #nav {
+    background-color: #eee;
+    overflow: hidden;
+  }
+  
+  #nav a {
+    text-decoration: none; 
+    padding: 14px 16px;
+    float: left;
+    color: #333;
+  }
+  
+  #nav a:hover {
+    background-color: lavender;
+  }
+  
+  #content {
+    padding: 20px;
+  }
+  
+  #footer {
+    background-color: #333;
+    color: #fff;
+    text-align: right;
+    padding: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+
+  #slide {
+    width: 100px;
+    position: absolute;
+    animation: slide 10s linear infinite;
+  }
+  
+  @keyframes slide {
+    from {top: 0px;}
+    to {top: 200px;}
+  }

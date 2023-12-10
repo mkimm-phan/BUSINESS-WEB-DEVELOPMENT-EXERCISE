@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script>
+            datasets= new Array(3)
+            datasets[0]="K214110837; Phan Thi My Kim; kimptm21411c@st.uel.edu.vn"
+            datasets[1]="K214110837; My Kim; kimptm21411c@st.uel.edu.vn"
+            datasets[2]="K214110837; Phan My Kim; kimptm21411c@st.uel.edu.vn"
+        </script>
+        <script>
+            function drawStdentData(){
+                tableBody=document.getElementById("tableBody")
+                for (i=0; i<datasets.length; i++){
+                    item=datasets[1]
+                    arr=item.split(";")
+                    tr="<tr>"
+                    tr+="<td>" + arr[0]+ "</td>"
+                    tr+="<td>" + arr[1]+ "</td>"
+                    tr+="<td>" + arr[2]+ "</td>"
+                    tr+="</tr>"
+                    tableBody.innerHTML+=tr
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <th> Student ID</th>
+                <th> Student Name</th>
+                <th> Student Email</th>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+        <script>
+            drawStdentData()
+        </script>
+    </body>
+</html>

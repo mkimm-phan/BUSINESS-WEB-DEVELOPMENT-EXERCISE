@@ -1,0 +1,27 @@
+<p>ptbac1 works!</p>
+
+<table border="1">
+    <tr>
+        <th colspan="2"> PT BAC 1</th>
+
+    </tr>
+    <tr>
+        <td>HS a:</td>
+        <td> <input type="number" [(ngModel)]="hsa"></td>
+    </tr>
+    <tr>
+        <td>HS b:</td>
+        <td> <input type="number" [(ngModel)]="hsb"></td>
+    </tr>
+    <tr>
+        <td> Ket qua: </td>
+        <td> {{ketqua}} </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;">
+            <button type="button" (click)="xulygiai()"> Giai</button>
+            <button type="button" > Lam lai</button>
+        </td>
+    </tr>
+
+</table>

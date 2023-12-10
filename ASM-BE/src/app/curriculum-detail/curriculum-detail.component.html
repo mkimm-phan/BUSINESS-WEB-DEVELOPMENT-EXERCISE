@@ -1,0 +1,47 @@
+<div *ngIf="errMessage" class="error-message">
+    <p>{{ errMessage }}</p>
+  </div>
+  
+  <div *ngIf="curriculum" class="curriculum-details">
+    <h2>{{ curriculum.Tensach }}</h2>
+  
+    <div class="info-line">
+      <b class="info-label">Giá bán: </b>
+      <span>{{ curriculum.Giaban }}</span>
+    </div>
+  
+    <div class="info-line">
+      <b class="info-label">Mô tả: </b>
+      <span>{{ curriculum.Mota }}</span>
+    </div>
+  
+    <div class="info-line">
+      <b class="info-label">Ảnh bìa: </b>
+      <img src="assets/curriculum_images/{{ curriculum.Anhbia }}" alt="{{ curriculum.Tensach }}" width="100px" height="150px">
+    </div>
+  
+    <div class="info-line">
+      <b class="info-label">Ngày cập nhật: </b>
+      <span>{{ curriculum.Ngaycapnhat }}</span>
+    </div>
+  
+    <div class="info-line">
+      <b class="info-label">Số lượng tồn: </b>
+      <span>{{ curriculum.Soluongton }}</span>
+    </div>
+  
+    <div class="info-line">
+      <b  class="info-label">Mã CD: </b>
+      <span>{{ curriculum.MaCD }}</span>
+    </div>
+  
+    <div class="info-line">
+      <b class="info-label">Mã NXB:</b>
+      <span>{{ curriculum.MaNXB }}</span>
+    </div>
+  
+    <div class="back-button">
+      <input type="button" value="Quay lại" [routerLink]="'/curriculum'">
+    </div>
+  </div>
+  

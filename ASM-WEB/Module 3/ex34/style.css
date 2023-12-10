@@ -1,0 +1,18 @@
+
+body{
+
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+p{
+    font-size: 14pt;
+    color: #000000;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+}
+strong{
+    color:#1919f9;
+    font-family: verdana;
+    font-size: 14pt;
+}

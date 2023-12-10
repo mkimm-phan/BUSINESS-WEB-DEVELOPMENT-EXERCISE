@@ -1,0 +1,13 @@
+<p>{{errMessage}}</p>
+<p>Thông tin chi tiếtđ </p>
+
+<div *ngIf="book">
+  <h2>{{ book.tenSach }} Details</h2>
+  <p>{{ book.moTa }}</p>
+  <img [src]="book.anhBia" alt="Book Cover" width="200">
+  <!-- Add other details as needed -->
+</div>
+
+<p *ngIf="errMessage">{{ errMessage }}</p>
+
+<button (click)="goBack()">Back to Book Management</button>

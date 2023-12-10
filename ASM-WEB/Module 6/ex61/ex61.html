@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+    <link href="/Module 6/Style.css" rel="stylesheet" />
+    <style>
+        table{
+            border-collapse: calc();
+        }
+    </style>
+  </head>
+<body>
+    <table class="tbColor" border="1" style="width: 80%;" align="center">
+        <caption> <h1> A Simple Color Picker </h1> </caption>
+        <tr>
+            <td>
+                <div style="margin-left: 10px;">
+                    <p>Background (enter values from '00' to 'FF')</p>
+                    <div>
+                    RED:
+                        <input id="txtRedA" maxlength="2" type="text" placeholder="00" />
+                    GREEN:
+                        <input id="txtGreenA" maxlength="2" type="text" placeholder="00"/>
+                    BLUE:
+                        <input id="txtBlueA" maxlength="2" type="text" placeholder="00" />
+                    </div>
+                </div>
+
+                <div style="margin-left: 10px;">
+                    <p>Text (enter values from '00' to 'FF')</p>
+                    <div>
+                    RED:
+                    <input id="txtRedB" maxlength="2" type="text" placeholder="00" />
+                    GREEN:
+                    <input id="txtGreenB" maxlength="2" type="text" placeholder="00"/>
+                    BLUE:
+                    <input id="txtBlueB" maxlength="2" type="text" placeholder="00" />
+                    </div>
+                </div>
+
+                <br>
+
+                <div align="center">
+                    <button id="btnApply">Apply</button>
+                    <button id="btnReload">Reload</button>
+                </div>
+
+                <br>
+
+            </td>
+            
+            <td id="bgContent" >
+                <div style="margin-left: 10px;">
+                    <h3>HAMLET</h3>
+                    <p> 
+                        Speak the speech, I pray you, as I pronounced it to you,
+                        trippingly on the tongue: but if you mouth it, as many as your
+                        players do, I had as lief the town-crier spoke my lines.    
+                    </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <p style="margin-left: 120px;">         *If you are using Netscape, you won't be able to change the text color.</p>
+</body>
+
+    <script>
+        const btnApply = document.getElementById("btnApply");
+        const btnReload = document.getElementById("btnReload");
+        const txtBlueA = document.getElementById("txtBlueA");
+        const txtBlueB = document.getElementById("txtBlueB");
+        const txtGreenA = document.getElementById("txtGreenA");
+        const txtGreenB = document.getElementById("txtGreenB");
+        const txtRedA = document.getElementById("txtRedA");
+        const txtRedB = document.getElementById("txtRedB");
+        const bgContent = document.getElementById("bgContent");
+    
+        function colorPicker(a, b, c) {
+            let colorValue = a.value + b.value + c.value;
+            return colorValue;
+        }
+    
+        btnApply.onclick = function () {
+            bgContent.style.backgroundColor = "#" + colorPicker(txtRedA, txtGreenA, txtBlueA);
+            bgContent.style.color = "#" + colorPicker(txtRedB, txtGreenB, txtBlueB);
+        };
+
+        btnReload.onclick = function () {
+            txtGreenA.value = "";
+            txtGreenB.value = "";
+            txtRedA.value = "";
+            txtRedB.value = "";
+            txtBlueA.value = "";
+            txtBlueB.value = "";
+        };
+  </script>
+</html>

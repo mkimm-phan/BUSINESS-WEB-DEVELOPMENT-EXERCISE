@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var stdent={
+            stdentID: "K214110837",
+            FirstName: "Kim",
+            MiddleName: "Thi My",
+            LastName: "Phan",
+            Birthday: "2003/10/05",
+            getFullName: function(){
+                s=  this.LastName.concat(" ")
+                    .concat(this.MiddleName).concat(" ")
+                    .concat(this.FirstName)
+                return s
+            },
+            getAge: function(){
+                // convert birthday to date objetc
+                dateOfB = Date.parse(thí.Birthday)
+                // 2. Get diff between now anf dob
+                diffMil=Date.now()-dateOfB
+                // convert diffmil to date
+                dateobDiddMil = new Date(diffMil)
+                // Dte return 1970
+                // Cuz y2k problem
+                age=Math.abs(dateobDiddMil.getUTCFullYear()-1970)
+                return age
+            }
+        }
+    </script>
+</head>
+<body >
+    <table border="1">
+        <tr>
+            <td> Student ID: </td>
+            <td>
+                <script>
+                    document.writeln(stdent.stdentID)
+                </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td> First Name: </td>
+            <td>
+                <script>
+                    document.writeln(stdent.FirstName)
+                </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Middle Name: </td>
+            <td>
+                <script>
+                    document.writeln(stdent.MiddleName)
+                </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Last Name: </td>
+            <td>
+                <script>
+                    document.writeln(stdent.LastName)
+                </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Full Name</td>
+            <td>
+                <script>
+                    document.writeln(stdent.getFullName())
+                </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Birthday: </td>
+            <td>
+                <script>
+                    document.writeln(stdent.Birthday)
+                </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Age: </td>
+            <td>
+                <script>
+                    document.writeln(stdent.getAge())
+                </script>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

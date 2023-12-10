@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <script>
+            var user = {
+                "id": "100005823642721",
+                "first_name": "Duy Thanh",
+                "gender": "male",
+                "last_name": "Trần",
+                "link": "https://www.facebook.com/duythanhcse",
+                "locale": "en_US",
+                "birthday": "20/12/1961",
+                "name": "Duy Thanh Trần",
+                "username": "duythanhcse"
+            }
+        </script>
+
+        <script>
+            function setData(id, data){
+                document.getElementById(id).innerHTML=data
+            }
+        </script>
+    </head>
+
+    <body>
+        <table border="1">
+            <tr>
+                <td> ID: </td>
+                <td id="tdid"></td>
+            </tr>
+            <tr>
+                <td> First Name: </td>
+                <td id="tdFName"></td>
+            </tr>
+            <tr>
+                <td> Gender: </td>
+                <td id="tdgender"></td>
+            </tr>
+            <tr>
+                <td> Last Name: </td>
+                <td id="tdLName"></td>
+            </tr>
+            <tr>
+                <td> Location: </td>
+                <td id="tdLocation"></td>
+            </tr>
+            <tr>
+                <td> Birthday: </td>
+                <td id="tdbirthday"></td>
+            </tr>
+            <tr>
+                <td> Name: </td>
+                <td id="tdName"></td>
+            </tr>
+            <tr>
+                <td> Use Name: </td>
+                <td id="tdUName"></td>
+            </tr>
+            <tbody id="tablebody">
+    
+            </tbody>
+        </table>
+
+        <script>
+            setData("tdid", user.id)
+            setData("tdFName", user.first_name)
+            setData("tdgender", user.gender)
+            setData("tdLName", user.last_name)
+            setData("tdLocation", user.locale)
+            setData("tdbirthday", user.birthday)
+            setData("tdName", user.name)
+            setData("tdUName", user.username)
+        </script>
+    </body>
+</html>

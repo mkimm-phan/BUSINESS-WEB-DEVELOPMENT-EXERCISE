@@ -1,0 +1,32 @@
+body {
+    margin:0 1vw;
+    font-family:Roboto;
+    background-color:rgb(255, 212, 133);
+}
+
+.container {
+    display: grid;
+    grid-template-columns:8.5fr 1.5fr;
+    column-gap: 1vw;
+}
+
+.float-left{
+   float:left;
+}
+
+.float-right{
+    float:right;
+}
+
+.below-logo{
+    background-color:antiquewhite;
+    border: 2px solid aqua;
+}
+
+h2{
+    color:mediumpurple;
+}
+
+h4{
+    color:purple;
+}

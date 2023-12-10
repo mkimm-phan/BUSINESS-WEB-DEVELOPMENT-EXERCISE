@@ -1,0 +1,22 @@
+body {
+  font-family: Roboto;
+  margin: 0;
+}
+
+input, button {
+  font-size: 1.2em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%z;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+
+ 

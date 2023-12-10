@@ -1,0 +1,52 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid blue;
+}
+
+.menu .about {
+    position: relative;
+}
+
+.menu li:hover {
+    background-color: orange;
+}
+
+.menu .about:hover .sub-menu{
+    display: block;
+}
+
+.sub-menu{
+    list-style: none;
+    position: absolute;
+    border: 1px solid green;
+    padding: 0;
+    left: 0;
+    top: 100%;
+    display: none;
+}
+
+.menu a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 32px;
+    color: rgb(105, 0, 0);
+    
+}
+
+.menu a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.menu .about .sub-menu li {
+    padding: 0px;
+}

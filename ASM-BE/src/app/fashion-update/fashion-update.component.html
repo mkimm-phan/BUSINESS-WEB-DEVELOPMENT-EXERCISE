@@ -1,0 +1,36 @@
+<p>{{errMessage}}</p>
+
+<form>
+  <table class="table table-bordered">
+    <tr>
+      <td><label for="style">Style</label></td>
+      <td>
+        <input type="text" class="form-control" name="style" id="style" placeholder="fashion style" [(ngModel)]="fashion.style"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="subject">Fashion Subject</label></td>
+      <td>
+        <input type="text" class="form-control" name="subject" id="subject" placeholder="Nhập fashion subject" [(ngModel)]="fashion.fashion_subject"/>
+      </td>
+    </tr>
+    <tr>
+        <td><label for="detail">Fashion detail</label></td>
+        <td>
+          <input type="text" class="form-control" name="detail" id="detail" placeholder="Nhập fashion subject" [(ngModel)]="fashion.fashion_detail"/>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="image">Fashion Image</label></td>
+        <td>
+          <input type="text" class="form-control" name="image" id="image" placeholder="Nhập fashion subject" [(ngModel)]="fashion.fashion_image"/>
+        </td>
+      </tr>
+    <tr>
+      <td colspan="2">
+        <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="putFashion()">Lưu</button>
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Hủy</button>
+      </td>
+    </tr>
+  </table>
+</form>

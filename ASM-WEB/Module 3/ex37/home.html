@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Home</title>
+        <!-- <link rel="stylesheet" href="/ASM-WEB/Module 3/ex37/style.css"/> -->
+        <style>
+            body{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid blue;
+}
+
+.menu .about {
+    position: relative;
+}
+
+.menu li:hover {
+    background-color: orange;
+}
+
+.menu .about:hover .sub-menu{
+    display: block;
+}
+
+.sub-menu{
+    list-style: none;
+    position: absolute;
+    border: 1px solid green;
+    padding: 0;
+    left: 0;
+    top: 100%;
+    display: none;
+}
+
+.menu a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 32px;    
+}
+
+.menu a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.menu .about .sub-menu li {
+    padding: 0px;
+}
+        </style>
+    </head>
+    <body>
+        <ul class="menu">
+            <li>
+                <a href="#">HOME</a>
+            </li>
+            <li>
+                <a href="#">HTML</a>
+            </li>
+
+            <li class="about">
+                <a href="#">CSS</a>
+                <ul class="sub-menu">
+                    <li><a href="#"> BASIC CSS </a></li>
+                    <li><a href="#"> GIAO DIỆN VỚI CSS</a></li>
+                    <li><a href="#"> CSS NÂNG CAO</a></li>
+                </ul>
+            </li>   
+
+            <li class="about">
+                <a href="#">JAVASCRIPT</a>
+                <ul class="sub-menu">
+                    <li><a href="#">LESSON 01</a></li>
+                    <li><a href="#">LESSON 02</a></li>
+                    <li><a href="#">LESSON 03</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">HTML DOM</a>
+            </li>
+            <li>
+                <a href="#">NGÔN NGỮ ASP</a>
+            </li>
+        </ul>
+    </body>
+</html>

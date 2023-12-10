@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function loadData()
+            {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "Dataset/books.xml", true);
+                xhr.send();
+                xhr.onreadystatechange=function()
+                {
+                    if(xhr.readyState==4 && xhr.status==200)
+                    {
+                        //use DOM here
+                        var xmlDoc = xhr.responseXML;
+                        var title=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue
+                        var author=xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue
+                        var year=xmlDoc.getElementsByTagName("year")[0].childNodes[0].nodeValue
+                        s=title+";"+author+";"+year
+                        //alert(s)
+                        tdtitle=document.getElementById("tdtitle")
+                        tdtitle.innerHTML=title
+                        tdauthor=document.getElementById("tdauthor")
+                        tdauthor.innerHTML=author
+                        tdyear=document.getElementById("tdyear")
+                        tdyear.innerHTML=year                    
+                    }
+                }   
+            }
+           
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>Title:</td>
+                <td id="tdtitle"></td>
+            </tr>
+            <tr>
+                <td>Author:</td>
+                <td id="tdauthor"></td>
+            </tr>
+            <tr>
+                <td>Year:</td>
+                <td id="tdyear"></td>
+            </tr>        
+        </table>
+        <script>
+            loadData()
+        </script>
+    </body>
+</html>

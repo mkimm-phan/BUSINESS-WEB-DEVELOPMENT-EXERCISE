@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="63.css">
+</head>
+<body>
+    <h1>Member Registration</h1>
+    <hr>
+    <div>
+        <form method="post" onsubmit="addRow(event); return false;">
+            <div>
+                <label for="fullName">Name (*)</label>
+                <input type="text" name="fullName" id="fullName" required/>
+            </div>
+            
+            <div>
+                <label>Birthday (*)</label>
+                Day: <select id="birth-day"></select>
+                Month: <select id="birth-month"></select>
+                Year: <select id="birth-year"></select>           
+            </div>
+
+            <div>
+                <label>Gender (*)</label>
+                <input type="radio" value="male" name="gender" id="Nam" />
+                <label for="Nam">Man</label>
+                <input type="radio" value="female" name="gender" id="Nu" />
+                <label for="Nu">Woman</label>
+            </div>
+
+            <div>
+                <label for="Email">Email (*)</label>
+                <input type="text" name="Email" id="Email" required/>
+            </div>
+        
+            <br>
+            <div>
+                <div>Your favorite hobbies:</div>
+                <div>
+                    <input type="checkbox" value="Shopping" id="Shopping"/> 
+                    <label for="Shopping">Shopping</label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Tourism" id="Tourism"/> 
+                    <label for="Tourism">Tourism</label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Chat" id="Chat"/> 
+                    <label for="Chat">Chat</label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Read" id="Read"/> 
+                    <label for="Read">Read a book</label>
+                </div>
+                <div>
+                    <input type="checkbox" value="listening" id="listening"/> 
+                    <label for="listening">Listening to music</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-favorite-color">
+                <div>Your favorite color:</div>
+                <div id="div-blue-picker">
+                    <input type="radio" id="blue" name="color" value="Blue" />
+                    <label for="blue">Blue</label>
+                </div>
+                <div id="div-red-picker">
+                    <input type="radio" id="red" name="color" value="Red" />
+                    <label for="red">Red</label>
+                </div>
+                <div id="div-yellow-picker">
+                    <input type="radio" id="yellow" name="color" value="Yellow" />
+                    <label for="yellow">Yellow</label>
+                </div>
+                <div id="div-green-picker">
+                    <input type="radio" id="Green" name="color" value="Green" />
+                    <label for="Green">Green</label>
+                </div>
+                <div id="div-violet-picker">
+                    <input type="radio" id="violet" name="color" value="Violet" />
+                    <label for="violet">Violet</label>
+                </div>
+            </div>
+            <br>
+            <div>
+                <button type="submit" name="btnSignup" id="btnSignup">Sign up</button>
+                <input type="reset" name="reset" id="reset" value="Reset" onclick="delRow()"/>
+            </div>
+            <br>
+            <div class="registered-table">
+                <table id="tbl-registered-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Birthday</th>
+                        <th>Hobbies</th>
+                        <th>Colors</th>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        var x=document.getElementById("birth-day")
+        
+        // Day
+        for (let i = 1; i <= 31; i++) {
+            var option = document.createElement("option");
+            option.text = i.toString();
+            x.add(option, x[i]);
+        }
+        // Month
+        var x = document.getElementById("birth-month");
+
+        for (let i = 1; i <= 12; i++) {
+            var option = document.createElement("option");
+            option.text = i.toString();
+            x.add(option, x[i]);
+        }
+
+        // Year
+        var x = document.getElementById("birth-year");
+        currentYear= new Date().getFullYear()
+        for (let i = 1950; i <= currentYear; i++) {
+            var option = document.createElement("option");
+            option.text = i.toString();
+            x.add(option, x[i]);
+        }
+
+        function addRow(event){
+            event.preventDefault();
+            // Get Name
+            var strName=document.getElementById("fullName").value
+            // Get Email
+            var email=document.getElementById("Email").value
+            // Get sex
+            var sex="";
+            if (document.getElementById("Nam").checked || document.getElementById("Nu").checked){
+                if (document.getElementById("Nam").checked){
+                    sex=document.getElementById("Nam").value
+                }
+                if (document.getElementById("Nu").checked){
+                    sex=document.getElementById("Nu").value
+                }
+            }
+            else{
+                sex="";
+                alert("Please")
+            }
+            
+            // Get birth day
+            var birth_day = document.getElementById("birth-day").value + "/" + document.getElementById("birth-month").value + "/" + document.getElementById("birth-year").value;
+
+            // Get hobbies
+            var hobbies = "";
+            
+            if (document.getElementById("Shopping").checked || document.getElementById("Tourism").checked || document.getElementById("Chat").checked || document.getElementById("Read").checked || document.getElementById("listening").checked) {
+                if (document.getElementById("Shopping").checked) {
+                    hobbies += document.getElementById("Shopping").value + ", ";
+                }
+                if (document.getElementById("Tourism").checked) {
+                    hobbies += document.getElementById("Tourism").value + ", ";
+                }
+                if (document.getElementById("Chat").checked) {
+                    hobbies += document.getElementById("Chat").value + ", ";
+                }
+                if (document.getElementById("Read").checked) {
+                    hobbies += document.getElementById("Read").value + ", ";
+                }
+                if (document.getElementById("listening").checked) {
+                    hobbies += document.getElementById("listening").value + ", ";
+                }
+            } else {
+                hobbies = "";
+                alert("Please")
+            }
+
+
+            // Get favorite color
+            var favorite_color = document.querySelector('input[name="color"]:checked').value;
+            if (favorite_color == null) {
+                favorite_color = "";
+            }
+
+
+            if ((strName != null) && (email != null) && (sex != null) && (birth_day != null) && (hobbies != null) && (favorite_color != null))
+
+            var table = document.getElementById("tbl-registered-table");
+            var row = table.insertRow(1);
+            
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+
+            cell1.innerHTML = strName;
+            cell2.innerHTML = email;
+            cell3.innerHTML = sex;
+            cell4.innerHTML = birth_day;
+            cell5.innerHTML = hobbies;
+            cell6.innerHTML = favorite_color;
+            }
+
+            function delRow() {
+            document.getElementById("fullName").value = '';
+            document.getElementById("fullName").focus();
+            
+            document.getElementById("birth-day").value = '';
+            document.getElementById("birth-month").value = '';
+            document.getElementById("birth-year").value = '';
+            document.getElementById("Shopping").checked = false;
+            document.getElementById("Tourism").checked = false;
+            document.getElementById("Chat").checked = false;
+            document.getElementById("Read").checked = false;
+            document.getElementById("listening").checked = false;
+            document.getElementsByName("color").value = '';
+            document.getElementById("email").value = '';
+            document.getElementById("Nam").checked = false;
+            document.getElementById("Nu").checked = false;
+            document.getElementById("blue").checked = false;
+            document.getElementById("red").checked = false;
+            document.getElementById("yellow").checked = false;
+            document.getElementById("green").checked = false;
+            document.getElementById("plum").checked = false;
+            }
+    </script>
+</body>
+
+
+</html>

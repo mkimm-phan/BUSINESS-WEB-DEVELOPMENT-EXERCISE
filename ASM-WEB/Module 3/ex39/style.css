@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    border-color:  rgb(0, 200, 7);
+}
+
+table td {
+    font-size: 1em;
+}
+
+table th {
+    font-size: 1.5em;
+    color: aliceblue;
+    background-color: rgb(0, 200, 7);
+}
+
+table tr:nth-child(2n+1) td {
+    background-color: rgb(169, 224, 185);
+}

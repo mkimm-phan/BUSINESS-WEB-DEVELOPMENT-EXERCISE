@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="load_default.js"></script>
+</head>
+
+<body>
+    <section class="header"></section>
+    <section class="content">
+            <span style="width: 30%"><container class="avatar-container"></container></span>
+            <div style="width: 70%">
+                <form action="#">
+                    <table>
+                        <tr>
+                            <th><label for="name">Name</label></th>
+                            <td>
+                                <input type="text" name="name" id="name">
+                            </td>
+                        </tr>
+                        <tr>
+            
+                            <th><label for="phone">Phone</label></th>
+                            <td>
+                                <input type="text" name="phone" id="phone">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="contnet">Content</label></th>
+                            <td>
+                                <input type="textarea" name="content" id="content">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right;">
+                                <button type="submit" id="submit">Đăng ký</button>
+                                <button type="reset" id="reset">Nhập lại</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+    </section>
+
+    <section class="footer"></section>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<div>{{errMessage}}</div>
+
+<h3>QUẢN LÝ THÔNG TIN SÁCH</h3>
+<a routerLink="/curriculum-new">Create New</a>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Tensach</th>
+      <th>Giaban</th>
+      <th>Mota</th>
+      <th>Anhbia</th>
+      <th>Ngaycapnhat</th>
+      <th>Soluongton</th>
+      <th>MaCD</th>
+      <th>MaNXB</th>
+      <th>Action</th>
+      <!-- <th>MK</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let curriculum of curriculums">
+      <td>{{curriculum.Tensach}}</td>
+      <td>{{curriculum.Giaban}}</td>
+      <td>{{curriculum.Mota}}</td>
+      <td><img src="assets/curriculum_images/{{curriculum.Anhbia}}" width="100px" height="150px"></td>
+      <td>{{curriculum.Ngaycapnhat}}</td>
+      <td>{{curriculum.Soluongton}}</td>
+      <td>{{curriculum.MaCD}}</td>
+      <td>{{curriculum.MaNXB}}</td>
+      <td>
+        <a routerLink="/curriculum-update/{{curriculum.Id}}">Edit</a> |
+        <a routerLink="/curriculum-detail/{{curriculum.Id}}">Details</a> |
+        <button style="margin-top: 5px" (click)="deleteCurriculum(curriculum.Id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>

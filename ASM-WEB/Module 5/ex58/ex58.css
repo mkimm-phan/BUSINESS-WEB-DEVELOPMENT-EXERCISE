@@ -1,0 +1,36 @@
+body {
+    font-family: Roboto;
+    margin: 0;
+    background-color: rgb(10, 10, 148);
+    color: aliceblue;
+    margin-left: 50px;
+  }
+
+  
+table {
+    border-collapse: calc();
+    width: 100%;
+  }
+  
+h2 {
+    margin: 0;
+}
+
+div{
+    padding: 5px;
+}
+
+.container-medium a {
+    color: black !important;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container-medium {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+}
+ 

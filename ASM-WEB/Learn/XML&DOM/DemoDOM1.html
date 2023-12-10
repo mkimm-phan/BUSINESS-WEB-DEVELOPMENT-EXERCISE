@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function processChangeAttribute(){
+            listofp=document.getElementsByTagName("p")
+            for (i=0; i<listofp.length; i++){
+                p=listofp[i]
+                // Show
+                p.setAttribute("title","This is tooltip" +i)
+                p.setAttribute("style", "font-size: 25px; color: red")
+            }
+            pLast=listofp[listofp.length-1]
+            alert(pLast.getAttribute("myVar"))
+            }
+    </script>
+</head>
+<body>
+    <p style="font-size: 15px;"> MyKimP</p>
+    <p style="font-size: 15px;"> My Kim</p>
+    <p style="font-size: 15px;"> Kim My</p>
+    <p myVar="I am La"> La La</p>
+    <input type="button" value="Change Attribute" 
+        onclick="processChangeAttribute()"
+    >
+</body>
+</html>

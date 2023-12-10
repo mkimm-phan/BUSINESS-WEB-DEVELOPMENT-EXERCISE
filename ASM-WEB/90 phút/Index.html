@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadXML() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "student.xml", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    //use DOM here
+                    var xmlDoc = xhr.responseXML;
+                    var mssv = xmlDoc.getElementsByTagName("mssv")[0].childNodes[0].nodeValue
+                    var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue
+                    var email = xmlDoc.getElementsByTagName("email")[0].childNodes[0].nodeValue
+                    var phone = xmlDoc.getElementsByTagName("phone")[0].childNodes[0].nodeValue
+                    var hobbies = xmlDoc.getElementsByTagName("hobbies")[0].childNodes[0].nodeValue
+                    var gender = xmlDoc.getElementsByTagName("gender")[0].childNodes[0].nodeValue
+                    var hometown = xmlDoc.getElementsByTagName("hometown")[0].childNodes[0].nodeValue
+                    var nickname = xmlDoc.getElementsByTagName("nickname")[0].childNodes[0].nodeValue
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>MSSV</th>
+            <td id="mssv"></td>
+        </tr>
+        <tr>
+            <th>Họ tên</th>
+            <td id="name"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td id="email"></td>
+        </tr>
+        <tr>
+            <th>Số điện thoại</th>
+            <td id="phone"></td>
+        </tr>
+        <tr>
+            <th>Sở thích</th>
+            <td id="hobbies"></td>
+        </tr>
+        <tr>
+            <th>Giới tính</th>
+            <td id="gender"></td>
+        </tr>
+        <tr>
+            <th>Quê quán</th>
+            <td id="hometown"></td>
+        </tr>
+        <tr>
+            <th>Nickname</th>
+            <td id="nickname"></td>
+        </tr>
+    </table>
+    <script>
+        loadXML()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<p>slide-show works!</p>
+
+
+<button type="button" (click)="changeImage1()"> Image 1 </button>
+<button type="button" (click)="changeImage2()"> Image 2 </button>
+
+<br>
+
+<div *ngIf="imagesIndex==1; then view1; else view2"></div>
+
+
+<ng-template #view1>
+    <img src="/assets/images/1.png" width="100" height="100">
+</ng-template>
+
+<ng-template #view2>
+    <img src="/assets/images/2.png" width="100" height="100">
+</ng-template>
+
+<br>
+<div [ngSwitch]="imagesIndex">
+    <p *ngSwitchCase="1">
+        <img src="/assets/images/1.png" width="100" height="100">
+    </p>
+    <p *ngSwitchCase="2">
+        <img src="/assets/images/1.png" width="100" height="100">
+    </p>
+</div>
+
+<ul>
+    <li *ngFor="let fruit of fruits; index as STT">
+        {{STT}} {{fruit}}
+    </li>
+</ul>

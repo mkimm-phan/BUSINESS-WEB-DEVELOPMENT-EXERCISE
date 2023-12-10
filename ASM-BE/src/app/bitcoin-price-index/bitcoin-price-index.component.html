@@ -1,0 +1,26 @@
+<!-- your-bitcoin-component.component.html -->
+
+<div *ngIf="bitcoinData">
+  <h2>{{ bitcoinData.chartName }}</h2>
+  <p>Last updated: {{ bitcoinData.time.updated }}</p>
+
+  <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Currency</th>
+          <th>Symbol</th>
+          <th>Rate</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let currency of getBitcoinCurrencies()">
+          <td>{{ currency }}</td>
+          <td>{{ bitcoinData.bpi[currency].symbol }}</td>
+          <td>{{ bitcoinData.bpi[currency].rate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

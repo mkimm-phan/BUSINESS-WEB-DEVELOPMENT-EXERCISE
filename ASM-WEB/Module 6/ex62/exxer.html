@@ -1,0 +1,44 @@
+<!-- Table and Event -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function changeBackgroundOver(obj){
+            obj.style.backgroundColor='yellow'
+        }
+
+        function changeBackgroundOut(obj){
+            obj.style.backgroundColor='green'
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <head>
+            <tr>
+                <th> ID </th>
+                <th> Product Name </th>
+                <th> Unit Price </th>
+            </tr>
+        </head>
+        <tbody>
+            <tr style="background-color: rgb(255, 255, 255);"
+                onmouseover="changeBackgroundOver(this)"
+                onmouseout="changeBackgroundOut(this)"
+                >
+                <td>P-1</td>
+                <td>CoCaCoLa</td>
+                <td>25$</td>
+            </tr>
+            <tr>
+                <td>P-2</td>
+                <td>Pepsi</td>
+                <td>20$</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

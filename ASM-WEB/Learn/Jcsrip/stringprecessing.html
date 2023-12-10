@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <!-- Tách chuỗi -->
+        <script>
+            s="K214110837; Phan Thi My Kim; kimptm21411c@st.uel.edu.vn"
+            arr=s.split(";")
+            stdentID = arr[0]
+            stdentName = arr[1]
+            stdentE = arr[2]
+        </script>
+        <script>
+            function showStudentin4(){
+                document.getElementById("tdName").innerHTML=stdentName
+                document.getElementById("tdE").innerHTML=stdentE
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td> Student ID: </td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(stdentID)
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td> Student Name: </td>
+                <td id="tdName">
+                </td>
+            </tr>
+            <tr>
+                <td> Email: </td>
+                <td id="tdE">
+                </td>
+            </tr>
+        </table>
+        <script>
+            showStudentin4()
+        </script>
+    </body>
+</html>

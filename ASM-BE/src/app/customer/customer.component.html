@@ -1,0 +1,23 @@
+<h4> Customer information</h4>
+
+<table>
+    <tr>
+        <td> Customer Name:</td>
+        <td><input type="text" [(ngModel)]="customer.name"></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><input type="email" [(ngModel)]="customer.email"></td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td><input type="tel" [(ngModel)]="customer.phone"></td>
+    </tr>
+    <tr>
+        <td>Adress:</td>
+        <td><input type="text" [(ngModel)]="customer.address"></td>
+    </tr>
+    <tr>
+        <td colspan="2"> <input type="button" (click)="processInformation()"> Confirm</td>
+    </tr>
+</table>

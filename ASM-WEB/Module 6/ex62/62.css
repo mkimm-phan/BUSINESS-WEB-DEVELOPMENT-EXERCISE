@@ -1,0 +1,19 @@
+th{
+    background-color:blue;
+    color: white;
+}
+/* 
+table tr:nth-child(2n+1) td{
+    background-color: rgb(249, 255, 192);
+    
+} */
+
+tr:hover{
+    background-color:yellow;
+    
+}
+
+table tr:last-child td{
+    background-color:blue;
+    color: white;   
+}

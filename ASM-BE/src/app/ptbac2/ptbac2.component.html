@@ -1,0 +1,31 @@
+<p>ptbac2 works!</p>
+
+<table border="1">
+    <tr>
+        <th colspan="2"> PT BAC 2</th>
+
+    </tr>
+    <tr>
+        <td>HS a:</td>
+        <td> <input type="number" [(ngModel)]="hsa"></td>
+    </tr>
+    <tr>
+        <td>HS b:</td>
+        <td> <input type="number" [(ngModel)]="hsb"></td>
+    </tr>
+    <tr>
+        <td>HS c:</td>
+        <td> <input type="number" [(ngModel)]="hsc"></td>
+    </tr>
+    <tr>
+        <td> Ket qua: </td>
+        <td> {{ketqua}} </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;">
+            <button type="button" (click)="findSolution()"> Find Solution</button>
+            <button type="button" > Clear</button>
+        </td>
+    </tr>
+
+</table>

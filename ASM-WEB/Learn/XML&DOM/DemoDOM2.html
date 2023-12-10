@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        menu1={ CateName: "Coffee",
+                product: ["Black Coffee", "Milk Coffee", "Mix Coffee", "MK coffee"]
+                }
+    </script>
+    <script type="text/javascript">
+        function drawMenu(){
+            div=document.getElementById("myMenu")
+            ul=document.createElement("ul")
+            div.appendChild(ul)
+            for (i=0; i<menu1.product.length; i++){
+                p=menu1.product[i]
+                li=document.createElement("li")
+                li.innerHTML=p
+                ul.appendChild(li)
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="myMenu">
+        <script>
+            drawMenu()
+        </script>
+    </div>
+</body>
+</html>
+<!-- Cos caaus trúc dữ liệu sau. hãy viết code cho cấu trúc dữ liệu đó -->

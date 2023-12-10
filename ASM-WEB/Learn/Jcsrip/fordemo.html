@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function drawtabel(){
+            mybody=document.getElementById("mybody");
+            for (i=1; i<=10; i++){
+                mytr="<tr><td>" +i+ "</td><td> Name" +i+ "</td><tr>";
+                mybody.innerHTML+=mytr;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button type="button" value="Draw Table" onclick="drawtabel()"> Draw Table</button>
+    <table id="mytable" border="1" style="width: 300px;">
+        <thead>
+            <tr>
+                <td> ID </td>
+                <td> NAME </td>
+            </tr>
+            <tbody id="mybody">
+
+            </tbody>
+        </thead>
+    </table>
+</body>
+</html>

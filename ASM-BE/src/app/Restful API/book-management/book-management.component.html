@@ -1,0 +1,56 @@
+<!-- src/app/book-list/book-list.component.html -->
+<h1>QUẢN LÝ THÔNG TIN SÁCH</h1>
+
+<button (click)="createNewBook()">Create New</button>
+
+<table border="1">
+  <tr>
+    <th>Tên sách</th>
+    <th>Giá bán</th>
+    <th>Mô tả</th>
+    <th>Ảnh bìa</th>
+    <th>Ngày cập nhật</th>
+    <th>Số lượng tồn</th>
+    <th>Mã CD</th>
+    <th>Mã NXB</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let book of books">
+    <td>{{ book.tenSach }}</td>
+    <td>${{ book.giaBan }}</td>
+    <td>{{ book.moTa }}</td>
+    <td><img [src]="book.anhBia" alt="Book Cover" width="50" height="50"></td>
+    <td>{{ book.ngayCapNhat }}</td>
+    <td>{{ book.soLuongTon }}</td>
+    <td>{{ book.maCD }}</td>
+    <td>{{ book.maNXB }}</td>
+    <td>
+      <button (click)="viewDetails(book)">Details</button>
+      <button (click)="editBook(book.maSach)">Edit</button>
+      <button (click)="deleteBook(book.maSach)">Delete</button>
+    </td>
+  </tr>
+</table>
+
+<!-- Details Modal -->
+<!-- <div *ngIf="selectedBook">
+  <h2>{{ selectedBook.tenSach }} Details</h2>
+  <p>{{ selectedBook.moTa }}</p>
+  <button (click)="closeDetails()">Close</button>
+</div> -->
+
+<!-- Edit Modal -->
+<div *ngIf="editingBook">
+  <h2>Edit {{ editingBook.tenSach }}</h2>
+  <!-- Add your form elements here for editing -->
+  <button (click)="saveEdit()">Save</button>
+  <button (click)="cancelEdit()">Cancel</button>
+</div>
+
+<!-- Create New Modal -->
+<div *ngIf="creatingNew">
+  <h2>Create New Book</h2>
+  <!-- Add your form elements here for creating new book -->
+  <button (click)="saveNew()">Save</button>
+  <button (click)="cancelNew()">Cancel</button>
+</div>

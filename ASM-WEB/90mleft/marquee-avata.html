@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee Avata</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .marquee-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .marquee img {
+            width: 100%;
+            height: auto;
+            animation: marqueeAnimation 10s linear infinite;
+        }
+
+        @keyframes marqueeAnimation {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <marquee direction="down" style="height: 100%; width: 30%;">
+        <div class="marquee">
+            I declare that all of these solutions 
+            are my own and not copied from anyone 
+            in this class
+        </div>
+    </marquee>
+</body>
+
+</html>

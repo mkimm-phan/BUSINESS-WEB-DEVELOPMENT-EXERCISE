@@ -1,0 +1,53 @@
+[
+    {
+      "cateId": "cate14",
+      "cateName": "Nước ngọt",
+      "products": [
+        {
+          "productId": "p1",
+          "productName": "Coca",
+          "unitPrice": 100,
+          "picture": "20"
+        },
+        {
+          "productId": "p2",
+          "productName": "Pepsi",
+          "unitPrice": 300,
+          "picture": ""
+        },
+        {
+          "productId": "p3",
+          "productName": "Sting",
+          "unitPrice": 200,
+          "picture": "STING"
+        }
+      ]
+    },
+    {
+      "cateId": "cate2",
+      "cateName": "Bia",
+      "products": [
+        {
+          "productId": "p4",
+          "productName": "Heiken",
+          "unitPrice": 500,
+          "picture": "h4.png"
+        },
+        {
+          "productId": "p5",
+          "productName": "333",
+          "unitPrice": 400,
+          "picture": "h5.png"
+        },
+        {
+          "productId": "p6",
+          "productName": "Sài Gòn",
+          "unitPrice": 600,
+          "picture": "h6.png"
+        }
+      ]
+    }
+  ]
+  
+
+  

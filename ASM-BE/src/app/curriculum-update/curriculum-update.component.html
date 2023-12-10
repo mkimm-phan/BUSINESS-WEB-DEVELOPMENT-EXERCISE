@@ -1,0 +1,60 @@
+<p>{{errMessage}}</p>
+
+<form>
+  <table class="table table-bordered">
+    <tr>
+      <td><label for="Id">Id</label></td>
+      <td>
+        <input type="text" class="form-control" name="Id" id="Id" placeholder="Nhập Id" [(ngModel)]="curriculum.Id"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="Tensach">Tensach</label></td>
+      <td>
+        <input type="text" class="form-control" name="Tensach" id="Tensach" placeholder="Nhập Tensach" [(ngModel)]="curriculum.Tensach"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="Giaban">Giaban</label></td>
+      <td>
+        <input type="text" class="form-control" name="Giaban" id="Giaban" placeholder="Nhập Giaban" [(ngModel)]="curriculum.Giaban"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="Mota">Mota</label></td>
+      <td>
+        <input type="text" class="form-control" name="Mota" id="Mota" placeholder="Nhập Mota" [(ngModel)]="curriculum.Mota"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="Ngaycapnhat">Ngaycapnhat</label></td>
+      <td>
+        <input type="text" class="form-control" name="Ngaycapnhat" id="Ngaycapnhat" placeholder="Nhập Ngaycapnhat" [(ngModel)]="curriculum.Ngaycapnhat"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="Soluongton">Soluongton</label></td>
+      <td>
+        <input type="text" class="form-control" name="Soluongton" id="Soluongton" placeholder="Nhập Soluongton" [(ngModel)]="curriculum.Soluongton"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="MaCD">MaCD</label></td>
+      <td>
+        <input type="text" class="form-control" name="MaCD" id="MaCD" placeholder="Nhập MaCD" [(ngModel)]="curriculum.MaCD"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="MaNXB">MaNXB</label></td>
+      <td>
+        <input type="text" class="form-control" name="MaNXB" id="MaNXB" placeholder="Nhập MaNXB" [(ngModel)]="curriculum.MaNXB"/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="putCurriculum()">Lưu</button>
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Hủy</button>
+      </td>
+    </tr>
+  </table>
+</form>
